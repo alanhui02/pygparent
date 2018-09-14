@@ -25,8 +25,8 @@
 
 	<!-- 引用dubbo 服务 -->
 	<dubbo:monitor protocol="registry"/>
-	<dubbo:application name="pinyougou-shop-web" />
+	<dubbo:application name="pyg-shop-web" />
 	<dubbo:registry address="zookeeper://192.168.25.128:2181"/>
-	<dubbo:annotation package="com.pinyougou.shop.controller" />  	
+	<dubbo:annotation package="com.pyg.shop.controller" />
 
 </beans>
