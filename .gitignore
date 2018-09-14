@@ -24,9 +24,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.idea/*
-/pygparent.iml
-/pyg-dao/pygdao.iml
-/pyg-pojo/pygpojo.iml
-/pyg-sellergoods-interface/pygsellergoodsinterface.iml
+/**/*.iml
+
 
 
