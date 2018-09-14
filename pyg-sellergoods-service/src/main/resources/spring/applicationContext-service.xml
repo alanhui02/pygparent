@@ -12,7 +12,7 @@
     <dubbo:monitor protocol="registry"/>
 	<dubbo:application name="pyg-sellergoods-service"/>
     <dubbo:registry address="zookeeper://192.168.25.128:2181"/>
-    <dubbo:annotation package="com.pyg.sellergoods.service.impl" />
+    <dubbo:annotation package="com.pyg.sellergoods.service" />
    
    
 </beans>
