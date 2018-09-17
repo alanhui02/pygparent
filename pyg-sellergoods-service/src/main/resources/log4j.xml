@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender" >
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}:%p %t %l - %m%n" /> -->
+			<param name="ConversionPattern" value="%d{HH:mm:ss}:%p %t %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="debug" />
+			<param name="levelMax" value="fatal" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="dailyRollingFileDebug" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="append" value="true"></param>
+		<param name="encoding" value="UTF-8"></param>
+		<param name="File" value="${catalina.base}/logs/pyg/service/pyg_debug.log"></param>
+		<param name="DatePattern" value="yyyy-MM-dd'.txt'"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}:%p %t %l - %m%n"></param>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="debug" />
+			<param name="levelMax" value="debug" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="dailyRollingFileInfo" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="append" value="true"></param>
+		<param name="encoding" value="UTF-8"></param>
+		<param name="File" value="${catalina.base}/logs/pyg/service/pyg_info.log"></param>
+		<param name="DatePattern" value="yyyy-MM-dd'.txt'"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}:%p %t %l - %m%n"></param>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="INFO" />
+			<param name="levelMax" value="WARN" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="dailyRollingFileError" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="append" value="true"></param>
+		<param name="encoding" value="UTF-8"></param>
+		<param name="File" value="${catalina.base}/logs/pyg/service/pyg_error.log"></param>
+		<param name="DatePattern" value="yyyy-MM-dd'.txt'"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}:%p %t %l - %m%n"></param>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="ERROR" />
+			<param name="levelMax" value="FATAL" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<logger name="com.apache.ibatis">
+		<level value="debug" />
+	</logger>
+	<logger name="java.sql">
+		<level value="debug" />
+	</logger>
+	<logger name="com.mybatis">
+		<level value="debug"/>
+	</logger>
+	<root>
+		<priority value="info" />
+		<appender-ref ref="dailyRollingFileDebug" />
+		<appender-ref ref="dailyRollingFileInfo" />
+		<appender-ref ref="dailyRollingFileError" />
+		<appender-ref ref="STDOUT" />
+	</root> 
+
+</log4j:configuration> 

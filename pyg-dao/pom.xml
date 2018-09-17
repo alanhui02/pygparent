@@ -50,14 +50,23 @@
 
     <build>
         <!--解决Intellij构建项目时，target/classes目录下不存在mapper.xml文件-->
-        <resources>
+        <!--<resources>
+            <resource>
+                <directory>${basedir}/src/main/resource</directory>
+                <includes>
+                    <include>a.xml</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
             <resource>
                 <directory>${basedir}/src/main/java</directory>
                 <includes>
                     <include>**/*.xml</include>
                 </includes>
+                <filtering>false</filtering>
             </resource>
-        </resources>
+        </resources>-->
 
     </build>
 </project>
