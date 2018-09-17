@@ -53,8 +53,8 @@
     <dubbo:monitor protocol="registry"/>
 	<dubbo:application name="pyg-shop-web" />
 	<dubbo:registry address="zookeeper://192.168.25.128:2181"/>
-	<!--<dubbo:annotation package="com.pyg.manager.controller" />-->
+	<dubbo:annotation package="com.pyg.sellergoods.service" />
 
-    <dubbo:reference id="demoService" check="false" interface="com.pyg.sellergoods.service.BrandService"/>
+    <!--<dubbo:reference id="brandService"  interface="com.pyg.sellergoods.service.BrandService" />-->
 
 </beans>
