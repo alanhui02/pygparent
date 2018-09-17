@@ -18,8 +18,8 @@ import java.util.List;
 @RequestMapping("/brand")
 public class BrandController {
 
-//	@Autowired
-	@com.alibaba.dubbo.config.annotation.Reference
+	@Autowired
+	//@com.alibaba.dubbo.config.annotation.Reference
 	private BrandService brandService;
 
 	@RequestMapping("/findAll")

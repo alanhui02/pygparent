@@ -1,10 +1,11 @@
 package com.pyg.sellergoods.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
+
 import com.pyg.mapper.BrandMapper;
 import com.pyg.pojo.Brand;
 import com.pyg.sellergoods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 import java.util.List;
 
@@ -12,8 +13,8 @@ import java.util.List;
  * @author QB_ZJ_A076
  * @time 2018/9/14
  */
-@com.alibaba.dubbo.config.annotation.Service
-//@Service
+//@com.alibaba.dubbo.config.annotation.Service
+//@org.springframework.stereotype.Service
 public class BrandServiceImpl implements BrandService {
 
 	@Autowired

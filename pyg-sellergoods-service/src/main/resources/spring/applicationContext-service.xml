@@ -15,13 +15,14 @@
 	<dubbo:application name="pyg-sellergoods-service"/>
     <dubbo:registry address="zookeeper://192.168.25.128:2181"/>
 
+    <!--注解方式-->
     <dubbo:annotation package="com.pyg.sellergoods.service" />
 
 	<!--非注解-->
-	<!--&lt;!&ndash; 声明需要暴露的服务接口 &ndash;&gt;
+	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.pyg.sellergoods.service.BrandService" ref="brandService" />
 
-	&lt;!&ndash; 和本地bean一样实现服务 &ndash;&gt;
-	<bean id="brandService" class="com.pyg.sellergoods.service.impl.BrandServiceImpl" />-->
+	<!-- 和本地bean一样实现服务 -->
+	<bean id="brandService" class="com.pyg.sellergoods.service.impl.BrandServiceImpl" />
 
 </beans>
